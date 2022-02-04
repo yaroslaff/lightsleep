@@ -10,9 +10,9 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name='sleep',
+    name='sleep2',
     version='0.0.1',
-    packages=['sleep'],
+    packages=['sleep2'],
     scripts=['bin/lightsleep.py'],
 
     install_requires=[
@@ -20,7 +20,7 @@ setup(
         'python-socketio[client]'
         ],
 
-    url='https://github.com/yaroslaff/sleep',
+    url='https://github.com/yaroslaff/sleep2',
     license='MIT',
     author='Yaroslav Polyakov',
     long_description=read('README.md'),
