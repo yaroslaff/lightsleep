@@ -15,7 +15,10 @@ setup(
     packages=['sleep'],
     scripts=['bin/lightsleep.py'],
 
-    install_requires=['redis'],
+    install_requires=[
+        'redis', 
+        'python-socketio[client]'
+        ],
 
     url='https://github.com/yaroslaff/sleep',
     license='MIT',
