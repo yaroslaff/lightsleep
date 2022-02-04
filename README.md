@@ -1,5 +1,7 @@
 # sleep
-sleep alernative (package and binary) which could be gracefully interrupted (even remotely)
+sleep() you can interrupt with redis or websocket event
+
+This is nice feature if you want to do some actions periodically AND immediately on some event.
 
 ## lightsleep 
 `Lightsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
