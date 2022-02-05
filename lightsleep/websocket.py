@@ -16,12 +16,12 @@ class WebsocketSleep(Hook):
         'event': 'update',
         'secret': None,
         'data': None,
-        'sleep': '0.1'
+        'period': '0.1'
     }
 
     def __init__(self, arglist):
         super().__init__(arglist)
-        self.sleep = float(self.args['sleep'])
+        self.period = float(self.args['period'])
 
 
     def sleep(self, seconds):
@@ -46,5 +46,5 @@ class WebsocketSleep(Hook):
 
         sio.connect(self.args['url'])
         while time.time() < stoptime and not self._stop:
-            time.sleep(self.sleep)
+            time.sleep(self.period)
         sio.disconnect()
