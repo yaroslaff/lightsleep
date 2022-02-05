@@ -15,7 +15,7 @@ class RedisSleep(Hook):
     def __init__(self, arglist):
 
         super().__init__(arglist)
-        self.sleep = float(self.args['period'])
+        self.period = float(self.args['period'])
         self.redis = redis.from_url(self.args['url'], decode_responses=True)
 
     def stopmsg(self, msg):
