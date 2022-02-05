@@ -24,3 +24,12 @@ class Sleep():
 
     def sleep(self, n):
         self.hook.sleep(n)
+
+    @staticmethod
+    def hooks():
+        h = dict()
+        for sub in Hook.__subclasses__():
+            h[sub.name] = sub.args
+        
+        return h
+

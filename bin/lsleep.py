@@ -4,7 +4,18 @@ import argparse
 from lightsleep import Sleep
 
 def get_args():
-    parser = argparse.ArgumentParser(description='Sleep which can awake')
+
+    hooks = Sleep.hooks()
+
+    epilog = ''
+
+    for name, args in hooks.items():
+        epilog += f'--hook {name}\n'
+        for arg, default in args.items():
+            epilog += f'    {arg}={default}\n'
+        epilog += '\n'
+
+    parser = argparse.ArgumentParser(description='Sleep which can awake', epilog=epilog,  formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('seconds', type=int)
     parser.add_argument('--hook', nargs='+', metavar=('METHOD', 'ARG'))
     return parser.parse_args()
