@@ -18,10 +18,12 @@ pip3 install git+https://github.com/yaroslaff/lightsleep
 ## lsleep 
 `lsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
 
-Useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 seconds):
+Almost useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 seconds):
 ~~~
 lsleep.py 60
 ~~~
+
+Even this example has some benefits - if your program will run external program lsleep.py instead of `sleep()`, you can always send kill to lsleep (e.g. with `killall lsleep.py`) and this is much more reliable then interrupting `sleep()` inside program. But thats same as `/usr/bin/sleep`. See below for more useful examples.
 
 `lsleep.py -h` will list all available hooks and their default options
 
