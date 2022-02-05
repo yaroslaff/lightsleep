@@ -23,7 +23,9 @@ Almost useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 s
 lsleep.py 60
 ~~~
 
-Even this example has some benefits - if your program will run external program lsleep.py instead of `sleep()`, you can always send kill to lsleep (e.g. with `killall lsleep.py`) and this is much more reliable then interrupting `sleep()` inside program. But thats same as `/usr/bin/sleep`. See below for more useful examples.
+Even this example has some benefits - if your program will run external program lsleep.py instead of `sleep()`, you can always send kill to lsleep (e.g. with `killall lsleep.py`) and this is much more reliable then interrupting `sleep()` inside program. But thats same as `/usr/bin/sleep`. 
+
+If `-t`/`--title` set, lsleep.py will use setproctitle. So, you may call `lsleep.py 600 -t mysleep` and then `killall mysleep` to stop only this lsleep process. 
 
 `lsleep.py -h` will list all available hooks and their default options
 

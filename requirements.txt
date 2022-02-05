@@ -1,2 +1,3 @@
 redis
 python-socketio[client]
+setproctitle
