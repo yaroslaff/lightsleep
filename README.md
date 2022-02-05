@@ -11,6 +11,8 @@ Useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 seconds)
 lsleep.py 60
 ~~~
 
+`lsleep.py -h` will list all available hooks and their default options
+
 ### interrupt sleep with redis PUBLISH command
 
 `lsleep.py 60 --hook redis` (defaults: local redis server, channel `sleep`)
