@@ -3,6 +3,18 @@ Lightsleep is sleep() you can interrupt with redis or websocket event
 
 This is nice feature if you want to do some actions periodically AND immediately on some event.
 
+# Install
+
+Install from pypi:
+~~~
+pip3 install lightsleep
+~~~
+... or install from git:
+~~~
+pip3 install -U git+https://github.com/yaroslaff/lightsleep
+~~~
+
+
 ## lightsleep 
 `ltsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
 
