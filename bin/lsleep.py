@@ -7,7 +7,7 @@ def get_args():
 
     hooks = Sleep.hooks()
 
-    epilog = 'HOOKS\n---\n'
+    epilog = 'HOOKS\n=====\n\n'
 
     for name, args in hooks.items():
         epilog += f'--hook {name}\n'

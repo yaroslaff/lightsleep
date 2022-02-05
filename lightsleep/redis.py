@@ -8,12 +8,14 @@ class RedisSleep(Hook):
     args = {
         'url': 'redis://localhost:6379/0',
         'ch': 'sleep',
-        'msg': None
+        'msg': None,
+        'sleep': '0.1'
     }
 
     def __init__(self, arglist):
 
         super().__init__(arglist)
+        self.sleep = float(self.args['sleep'])
         self.redis = redis.from_url(self.args['url'], decode_responses=True)
 
     def stopmsg(self, msg):
@@ -40,6 +42,6 @@ class RedisSleep(Hook):
                 return
 
             left = stop_time - time.time()
-            time.sleep(min(0.1, left))
+            time.sleep(min(self.sleep, left))
 
 
