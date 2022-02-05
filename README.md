@@ -11,12 +11,12 @@ pip3 install lightsleep
 ~~~
 ... or install from git:
 ~~~
-pip3 install -U git+https://github.com/yaroslaff/lightsleep
+pip3 install git+https://github.com/yaroslaff/lightsleep
 ~~~
 
 
-## lightsleep 
-`ltsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
+## lsleep 
+`lsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
 
 Useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 seconds):
 ~~~
