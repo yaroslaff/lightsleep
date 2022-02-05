@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import argparse
-from sleep2 import Sleep
+from lightsleep import Sleep
 
 def get_args():
     parser = argparse.ArgumentParser(description='Sleep which can awake')

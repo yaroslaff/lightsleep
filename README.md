@@ -1,19 +1,19 @@
-# sleep
-sleep() you can interrupt with redis or websocket event
+# lightsleep
+Lightsleep is sleep() you can interrupt with redis or websocket event
 
 This is nice feature if you want to do some actions periodically AND immediately on some event.
 
 ## lightsleep 
-`Lightsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
+`ltsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
 
-Useless example where lightsleep is identical to `/usr/bin/sleep` (sleep 60 seconds):
+Useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 seconds):
 ~~~
-lightsleep.py 60
+lsleep.py 60
 ~~~
 
 ### interrupt sleep with redis PUBLISH command
 
-`lightsleep.py 60 --hook redis` (defaults: local redis server, channel `sleep`)
+`lsleep.py 60 --hook redis` (defaults: local redis server, channel `sleep`)
 
 Interrupt this sleep from redis-cli:
 ~~~
@@ -23,13 +23,13 @@ Interrupt this sleep from redis-cli:
 
 To override defaults parameters: 
 ~~~
-lightsleep.py 60 --hook redis url=redis://localhost:6379/0 msg=stop ch=sleep
+lsleep.py 60 --hook redis url=redis://localhost:6379/0 msg=stop ch=sleep
 ~~~
 (seting `msg` to any value will requre to PUBLISH exact this value. If `msg` is not set, any message will interrupt sleep)
 
 ### Interrupt sleep with websocket 
 ~~~
-lightsleep.py 300 --hook ws url=http://localhost:8899/ room=myapps::u1 secret=myapps-pass
+lsleep.py 300 --hook ws url=http://localhost:8899/ room=myapps::u1 secret=myapps-pass
 ~~~
 
 You may use [ws-emit](https://github.com/yaroslaff/ws-emit) websocket application as server.
@@ -39,10 +39,10 @@ optional `secret` if room requires secret to join (when room name containts '::'
 If `event` and `data` specified, sleep will be interrupted only if websocket event name and data matches it.
 
 ## Using sleep in your package
-See lightsleep.py code, it's very small. Example:
+See lsleep.py code, it's very small. Example:
 
 ~~~python
-from sleep import Sleep
+from lightsleep import Sleep
 
 s = Sleep(hook=['redis','msg=stop', 'ch=sleep'])
 s.sleep(60)
