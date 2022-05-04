@@ -30,8 +30,11 @@ If `-t`/`--title` set, lsleep.py will use setproctitle. So, you may call `lsleep
 `lsleep.py -h` will list all available hooks and their default options
 
 ### Interrupt sleep with touch or any write
-`lsleep.py 300 --hook mtime path=/tmp/x`
-Then you can interrupt sleep with `touch /tmp/x` or `echo anything > /tmp/x`.
+~~~
+lsleep.py 300 --hook mtime path=/tmp/x
+~~~
+
+You can interrupt sleep with `touch /tmp/x` or `echo anything > /tmp/x`.
 
 
 ### interrupt sleep with redis PUBLISH command
