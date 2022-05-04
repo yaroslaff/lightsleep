@@ -16,7 +16,7 @@ pip3 install git+https://github.com/yaroslaff/lightsleep
 
 
 ## lsleep 
-`lsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `sleep`.
+`lsleep.py` is very short simple CLI utility (better then `/usr/bin/sleep`) which is also demo how to use `lightsleep` python module.
 
 Almost useless example where lsleep is identical to `/usr/bin/sleep` (sleep 60 seconds):
 ~~~
