@@ -5,6 +5,7 @@ from .exceptions import SleepException
 from .idle import IdleSleep
 from .redis import RedisSleep
 from .websocket import WebsocketSleep
+from .mtime import MtimeSleep
 
 class Sleep():
     """ This is unified sleep class which handles all hooks """

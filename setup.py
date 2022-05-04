@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name='lightsleep',
-    version='0.0.2',
+    version='0.0.3',
     packages=['lightsleep'],
     scripts=['bin/lsleep.py'],
 

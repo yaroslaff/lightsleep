@@ -1,5 +1,5 @@
 # lightsleep
-Lightsleep is sleep() you can interrupt with redis or websocket event
+Lightsleep is sleep() you can interrupt with redis or websocket event or touch/write file.
 
 This is nice feature if you want to do some actions periodically AND immediately on some event.
 
@@ -28,6 +28,11 @@ Even this example has some benefits - if your program will run external program 
 If `-t`/`--title` set, lsleep.py will use setproctitle. So, you may call `lsleep.py 600 -t mysleep` and then `killall mysleep` to stop only this lsleep process. 
 
 `lsleep.py -h` will list all available hooks and their default options
+
+### Interrupt sleep with touch or any write
+`lsleep.py 300 --hook mtime path=/tmp/x`
+Then you can interrupt sleep with `touch /tmp/x` or `echo anything > /tmp/x`.
+
 
 ### interrupt sleep with redis PUBLISH command
 
