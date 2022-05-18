@@ -11,14 +11,14 @@ def read(fname):
 
 setup(
     name='lightsleep',
-    version='0.0.4',
+    version='0.0.5',
     packages=['lightsleep'],
     scripts=['bin/lsleep.py'],
 
     install_requires=[
         'redis', 
         'python-socketio[client]',
-        'setproctitile'
+        'setproctitle'
         ],
 
     url='https://github.com/yaroslaff/lightsleep',
