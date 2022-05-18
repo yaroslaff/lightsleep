@@ -73,3 +73,5 @@ from lightsleep import Sleep
 s = Sleep(hook=['redis','msg=stop', 'ch=sleep'])
 s.sleep(60)
 ~~~
+
+`sleep()` returns message which interrupted sleep (if hook supports this). For example, if redis hook used and sleep was interrupted with `PUBLISH sleep zzz`, `sleep()` will return `zzz`.
