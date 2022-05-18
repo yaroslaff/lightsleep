@@ -39,7 +39,7 @@ class RedisSleep(Hook):
             msg = p.get_message(timeout = seconds)
             if self.stopmsg(msg) or time.time() >= stop_time:
                 p.unsubscribe()
-                return
+                return msg['data']
 
             left = stop_time - time.time()
             time.sleep(min(self.period, left))

@@ -24,7 +24,7 @@ class Sleep():
         raise SleepException(f"Not found hook {hook[0]}")
 
     def sleep(self, n):
-        self.hook.sleep(n)
+        return self.hook.sleep(n)
 
     @staticmethod
     def hooks():
